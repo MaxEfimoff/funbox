@@ -1,6 +1,6 @@
 import {
   GET_DESTINATIONS,
-  DELETE_POST,
+  DELETE_DESTINATION,
   NEW_DESTINATION
 } from "../actions/types";
 
@@ -19,9 +19,9 @@ export default function(state = initialState, action) {
     case NEW_DESTINATION:
       return {
         ...state,
-        items: [action.payload, ...state.items]
+        items: [...state.items, action.payload]
       };
-    case DELETE_POST:
+    case DELETE_DESTINATION:
       return {
         ...state,
         items: state.items.filter(post => post._id !== action.payload)

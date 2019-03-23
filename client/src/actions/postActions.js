@@ -2,7 +2,7 @@ import axios from "axios";
 import {
   GET_DESTINATIONS,
   NEW_DESTINATION,
-  DELETE_POST,
+  DELETE_DESTINATION,
   GET_ERRORS,
   DESTINATION_LOADING,
   CLEAR_ERRORS
@@ -52,7 +52,7 @@ export const deletePost = id => dispatch => {
     .delete(`/api/locations/${id}`)
     .then(res =>
       dispatch({
-        type: DELETE_POST,
+        type: DELETE_DESTINATION,
         payload: id
       })
     )
