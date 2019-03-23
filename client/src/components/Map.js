@@ -69,23 +69,19 @@ class Map extends Component {
       );
     }
 
-    /*Listener для каждой точки массива маршрутов. НЕ РАБОТАЕТ
-      destination.forEach(function(item, destination) {
-      window.google.maps.event.addListener(
-        destination,
-        "position_changed",
-        console.log("1")
-      );
-    });
+    //Пытаемся навесить обработчики на все точки. НЕ РАБОТАЕТ
+    // for (var i = 0; i < destination.length; i++) {
+    //   window.google.maps.event.addListener(i, "position_changed", update);
 
-    destination.setMap(map);
+    //   i.setMap(map);
+    // }
 
-    function update() {
-      var path = destination.getPosition();
-      var lat = path.lat();
-      var lng = path.lng();
-      console.log("Lat: " + lat + "\nLon: " + lng);
-    } */
+    // function update() {
+    //   var path = i.getPosition();
+    //   var lat = path.lat();
+    //   var lng = path.lng();
+    //   console.log("Lat: " + lat + "\nLon: " + lng);
+    // }
   };
 
   render() {
