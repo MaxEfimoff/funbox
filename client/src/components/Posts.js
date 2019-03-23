@@ -43,7 +43,6 @@ Posts.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  //мы используем state.posts, тк в rootReducer мы установили post: postReducer
   items: state.posts.items,
   newPost: state.posts.item
 });

@@ -15,8 +15,8 @@ class App extends Component {
           <div>
             <DestinationForm />
             <Posts />
-            <Map />
           </div>
+          <Map />
         </div>
       </Provider>
     );

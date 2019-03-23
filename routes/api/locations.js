@@ -8,7 +8,7 @@ const Location = require("../../models/Location");
 //desc  Tests location route
 router.get("/test", (req, res) => res.json({ msg: "Locations works" }));
 
-//route POST api/locations/create
+//route POST api/locations/
 //desc  Creates new location
 //router.post("/");
 
@@ -19,18 +19,18 @@ router.post("/", (req, res) => {
   newLocation.save().then(post => res.json(post));
 });
 
-//route POST api/locations/create
-//desc  Creates new location
+//route GET api/locations/
+//desc  Gets new location
 router.get("/", (req, res) => {
   Location.find()
-    .sort({ date: 1 })
+    .sort({ date: -1 })
     .then(locations => res.json(locations))
     .catch(err =>
       res.status(404).json({ nolocationfound: "No locations found" })
     );
 });
 
-//route DELETE api/locations/delete
+//route DELETE api/locations/
 //desc  Deletes location
 router.delete("/:id", (req, res) => {
   Location.findById(req.params.id)
